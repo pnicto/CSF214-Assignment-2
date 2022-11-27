@@ -58,3 +58,39 @@ std::string infixToPrefix(std::string infixFormula) {
 
   return prefixFormula;
 }
+
+std::string prefixToInfix(std::string prefixFormula, bool returnLeft) {
+  Stack operandStack{};
+  std::reverse(prefixFormula.begin(), prefixFormula.end());
+  for (char character : prefixFormula) {
+    switch (character) {
+      case '+':
+      case '*':
+      case '>': {
+        std::string operand1 = operandStack.pop();
+        std::string operand2 = operandStack.pop();
+        std::string temp = "(" + operand1 + character + operand2 + ")";
+        operandStack.push(temp);
+        break;
+      }
+      case '~': {
+        std::string operand = operandStack.pop();
+        std::string temp = "(" + character + operand + ")";
+        operandStack.push(temp);
+        break;
+      }
+      default: {
+        std::string temp{character};
+        operandStack.push(temp);
+      }
+    }
+  }
+
+  std::string temp1 = operandStack.pop();
+  std::string temp2 = operandStack.pop();
+  if (temp2 == "\0" || returnLeft) {
+    return temp1;
+  } else {
+    return temp2;
+  }
+}
