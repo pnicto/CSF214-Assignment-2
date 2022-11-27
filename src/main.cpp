@@ -22,5 +22,9 @@ int main() {
               << proof.getLineReference2(i + 1) << "\n\n";
   }
 
+  std::cout << infixToPrefix("((a+b)*(c>d))") << "\n";
+  std::cout << prefixToInfix("+ab>cd") << "\n";
+  std::cout << prefixToInfix("+ab>cd", false) << "\n";
+
   return 0;
 }
