@@ -1,6 +1,9 @@
 #pragma once
 
 #include <iostream>
-#include <string>
+
+#include "logicProof.h"
+#include "proofLine.h"
+#include "utils.h"
 
 int main();
