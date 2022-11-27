@@ -1,0 +1,6 @@
+logs
+build
+*.o
+.vscode
+flame
+samples
