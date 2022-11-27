@@ -16,7 +16,7 @@
  */
 void Stack::resizeArray() {
   tempStackElements = stackElements;
-  stackElements = new char[maxElements * 2]{};
+  stackElements = new std::string[maxElements * 2]{};
   for (long long int i = 0; i < maxElements; i++) {
     stackElements[i] = tempStackElements[i];
   }
@@ -27,10 +27,10 @@ void Stack::resizeArray() {
 /*!
  * @brief Construct a new Stack object
  *@details A new instance of Stack will be created with Stack::stackElements
- *being a char[1], Stack::idx being -1 and Stack::maxElements being 1
+ *being a std::string[1], Stack::idx being -1 and Stack::maxElements being 1
  */
 Stack::Stack() {
-  stackElements = new char[1]{};
+  stackElements = new std::string[1]{};
   maxElements = 1;
   idx = -1;
 }
@@ -46,7 +46,7 @@ Stack::~Stack() { delete[] stackElements; }
  *
  * @param element
  */
-void Stack::push(char element) {
+void Stack::push(std::string element) {
   if (idx >= maxElements - 1) {
     resizeArray();
   }
@@ -57,16 +57,17 @@ void Stack::push(char element) {
 /*!
  * @brief Removes the element at the top of the stack and returns it
  *
- * @return char
+ * @return std::string
  */
-char Stack::pop() {
+std::string Stack::pop() {
   if (idx >= 0) {
-    char elementToBeReturned = stackElements[idx];
-    stackElements[idx] = 0;
+    std::string elementToBeReturned = stackElements[idx];
+    stackElements[idx] = "\0";
     idx--;
     return elementToBeReturned;
   }
-  return 0;
+
+  return "\0";
 }
 
 /*!

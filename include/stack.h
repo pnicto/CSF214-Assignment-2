@@ -9,6 +9,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 
 /*!
  * @brief Class for stack to store operators to convert the propositional logic
@@ -21,14 +22,14 @@ class Stack {
    * @brief Elements of the stack
    *
    */
-  char* stackElements;
+  std::string* stackElements;
 
   /*!
    * @brief Temporary variable to store the elements of the stack before
    * resizing the stack
    *
    */
-  char* tempStackElements;
+  std::string* tempStackElements;
 
   /*!
    * @brief Maximum elements the stack can store
@@ -48,8 +49,8 @@ class Stack {
   Stack();
   ~Stack();
 
-  void push(char element);
-  char pop();
+  void push(std::string element);
+  std::string pop();
 
   void printStack();
 };
