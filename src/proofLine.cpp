@@ -16,6 +16,9 @@ ProofLine::ProofLine(const std::string& str) {
       }
     }
   }
+  std::cout << "1 is: " << delim1Index << "\n";
+  std::cout << "2 is: " << delim2Index << "\n";
+  std::cout << "3 is: " << delim3Index << "\n";
 
   formula = str.substr(0, delim1Index);
 
@@ -29,13 +32,14 @@ ProofLine::ProofLine(const std::string& str) {
     rule = str.substr(delim1Index + 1, delim2Index - delim1Index - 1);
     if (!delim3Index) {
       lineReference1 =
-          std::stoi(str.substr(delim2Index, str.length() - delim2Index - 1));
+          std::stoi(str.substr(delim2Index + 1, str.length() - delim2Index));
       lineReference2 = 0;
     } else {
       lineReference1 =
-          std::stoi(str.substr(delim2Index, delim3Index - delim2Index - 1));
+          std::stoi(str.substr(delim2Index + 1, delim3Index - delim2Index));
+
       lineReference2 =
-          std::stoi(str.substr(delim3Index, str.length() - delim3Index - 1));
+          std::stoi(str.substr(delim3Index + 1, str.length() - delim3Index));
     }
   }
 }
