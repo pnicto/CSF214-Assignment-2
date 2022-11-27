@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <stdexcept>
 
 #include "proofLine.h"
@@ -17,13 +16,9 @@ class LogicProof {
   void setLine(int lineNo, std::string str);
 
   int getLength();
-
   const std::string getFormula(int lineNo);
-
   const std::string getRule(int lineNo);
-
   int getLineReference1(int lineNo);
-
   int getLineReference2(int lineNo);
 
   bool isValid();
