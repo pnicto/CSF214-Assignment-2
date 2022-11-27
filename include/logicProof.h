@@ -4,6 +4,7 @@
 #include <stdexcept>
 
 #include "proofLine.h"
+#include "utils.h"
 
 class LogicProof {
  private:
@@ -24,6 +25,8 @@ class LogicProof {
   int getLineReference1(int lineNo);
 
   int getLineReference2(int lineNo);
+
+  bool isValid();
 };
 
 bool validateLine(LogicProof& proof, int lineNo);

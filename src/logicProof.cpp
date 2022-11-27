@@ -44,6 +44,16 @@ int LogicProof::getLineReference2(int lineNo) {
   return (*(linesOfProof[lineNo - 1])).getLineReference2();
 }
 
+bool LogicProof::isValid() {
+  bool flag = true;
+  for (int i{0}; (i < length) && flag; i++) {
+    if (!(validateLine(*this, i + 1))) {
+      flag = false;
+    }
+  }
+  return flag;
+}
+
 bool validateLine(LogicProof& proof, int lineNo) {
   if (lineNo > proof.getLength()) {
     throw std::invalid_argument("received index greater than proof length");
