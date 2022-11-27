@@ -25,3 +25,5 @@ class LogicProof {
 
   int getLineReference2(int lineNo);
 };
+
+bool validateLine(LogicProof& proof, int lineNo);
