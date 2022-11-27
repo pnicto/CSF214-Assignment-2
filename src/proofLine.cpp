@@ -16,9 +16,6 @@ ProofLine::ProofLine(const std::string& str) {
       }
     }
   }
-  std::cout << "1 is: " << delim1Index << "\n";
-  std::cout << "2 is: " << delim2Index << "\n";
-  std::cout << "3 is: " << delim3Index << "\n";
 
   formula = str.substr(0, delim1Index);
 
