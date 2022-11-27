@@ -94,3 +94,12 @@ std::string prefixToInfix(std::string prefixFormula, bool returnLeft) {
     return temp2;
   }
 }
+
+std::string* getSubformulas(std::string infixFormula) {
+  std::string* subformulas = new std::string[2]{};
+  std::string prefixFormula = infixToPrefix(infixFormula);
+  prefixFormula = prefixFormula.substr(1, prefixFormula.length() - 1);
+  subformulas[0] = prefixToInfix(prefixFormula, true);
+  subformulas[1] = prefixToInfix(prefixFormula, false);
+  return subformulas;
+}
