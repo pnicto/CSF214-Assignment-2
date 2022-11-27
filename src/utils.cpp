@@ -8,7 +8,7 @@
  * remaining characters are added to prefix string variable until "(" is found.
  * Then the stack is popped until ")" again adding the popped operators to the
  * prefix string.
- *
+ *char
  * @return std::string prefixFormula
  */
 std::string infixToPrefix(std::string infixFormula) {
@@ -22,13 +22,14 @@ std::string infixToPrefix(std::string infixFormula) {
 
   // Iterate through the string and add the operators to stack
   for (char character : infixFormula) {
+    std::string characterString{character};
     switch (character) {
       case '~':
       case '+':
       case '*':
       case '>':
       case ')':
-        operatorStack.push(character);
+        operatorStack.push(characterString);
         break;
 
         // When '(' is the character in the reversed infix formula, start
@@ -37,8 +38,8 @@ std::string infixToPrefix(std::string infixFormula) {
 
       case '(':
         while (1) {
-          char operatorToBeAdded = operatorStack.pop();
-          if (operatorToBeAdded == ')')
+          std::string operatorToBeAdded = operatorStack.pop();
+          if (operatorToBeAdded[0] == ')')
             break;
           else
             prefixFormula += operatorToBeAdded;
