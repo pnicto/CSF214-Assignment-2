@@ -10,6 +10,9 @@ void LogicProof::setLine(int lineNo, std::string str) {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
   }
+  if (lineNo < 1) {
+    throw std::invalid_argument("received index less than 1");
+  }
 
   linesOfProof[lineNo - 1] = new ProofLine(str);
 }
@@ -20,12 +23,18 @@ const std::string LogicProof::getFormula(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
   }
+  if (lineNo < 1) {
+    throw std::invalid_argument("received index less than 1");
+  }
   return (*(linesOfProof[lineNo - 1])).getFormula();
 }
 
 const std::string LogicProof::getRule(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
+  }
+  if (lineNo < 1) {
+    throw std::invalid_argument("received index less than 1");
   }
   return (*(linesOfProof[lineNo - 1])).getRule();
 }
@@ -34,12 +43,18 @@ int LogicProof::getLineReference1(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
   }
+  if (lineNo < 1) {
+    throw std::invalid_argument("received index less than 1");
+  }
   return (*(linesOfProof[lineNo - 1])).getLineReference1();
 }
 
 int LogicProof::getLineReference2(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
+  }
+  if (lineNo < 1) {
+    throw std::invalid_argument("received index less than 1");
   }
   return (*(linesOfProof[lineNo - 1])).getLineReference2();
 }
