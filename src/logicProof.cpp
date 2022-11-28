@@ -72,63 +72,68 @@ const ProofLine& LogicProof::getProofLine(int lineNo) const {
 bool LogicProof::isValid() {
   bool flag = true;
   for (int i{0}; (i < length) && flag; i++) {
-    if (!(validateLine(*this, i + 1))) {
+    if (!(validateLine(i + 1))) {
       flag = false;
     }
   }
   return flag;
 }
 
-bool validateLine(LogicProof& proof, int lineNo) {
-  if (lineNo > proof.getLength()) {
+bool LogicProof::validateLine(int lineNo) {
+  if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
   }
-  std::string rule = proof.getRule(lineNo);
+  if (lineNo < 1) {
+    throw std::invalid_argument("received index less than 1");
+  }
+  const ProofLine& currentLine = this->getProofLine(lineNo);
+  std::string rule = currentLine.getRule();
 
   switch (rule[0]) {
     case 'p':
     case 'P':
       return true;
       break;
-    case '+': {
-      std::string* subformulas = getSubformulas(proof.getFormula(lineNo));
 
-      if (lineNo <= proof.getLineReference1(lineNo) ||
-          infixToPrefix(proof.getFormula(lineNo))[0] != '+')
+    case '+': {
+      std::string* subformulas = getSubformulas(currentLine.getFormula());
+
+      if (lineNo <= currentLine.getLineReference1() ||
+          infixToPrefix(currentLine.getFormula())[0] != '+' || rule[1] != 'i')
         return false;
 
       if (rule[2] == '1') {
         if (subformulas[0] ==
-            proof.getFormula(proof.getLineReference1(lineNo))) {
+            this->getFormula(currentLine.getLineReference1())) {
           return true;
         }
 
         return false;
       }
-
       if (rule[2] == '2') {
         if (subformulas[1] ==
-            proof.getFormula(proof.getLineReference1(lineNo))) {
+            this->getFormula(currentLine.getLineReference1())) {
           return true;
         }
       }
       return false;
       break;
     }
+
     case '*': {
       if (rule[1] == 'i') {
-        std::string* subformulas = getSubformulas(proof.getFormula(lineNo));
+        std::string* subformulas = getSubformulas(currentLine.getFormula());
 
-        if (lineNo <= proof.getLineReference1(lineNo) ||
-            lineNo <= proof.getLineReference2(lineNo) ||
-            infixToPrefix(proof.getFormula(lineNo))[0] != '*') {
+        if (lineNo <= currentLine.getLineReference1() ||
+            lineNo <= currentLine.getLineReference2() ||
+            infixToPrefix(currentLine.getFormula())[0] != '*') {
           return false;
         }
 
         if (subformulas[0] ==
-                proof.getFormula(proof.getLineReference1(lineNo)) &&
+                this->getFormula(currentLine.getLineReference1()) &&
             subformulas[1] ==
-                proof.getFormula(proof.getLineReference2(lineNo))) {
+                this->getFormula(currentLine.getLineReference2())) {
           return true;
         }
 
@@ -137,27 +142,32 @@ bool validateLine(LogicProof& proof, int lineNo) {
 
       if (rule[1] == 'e') {
         std::string* referenceSubformulas =
-            getSubformulas(proof.getFormula(proof.getLineReference1(lineNo)));
+            getSubformulas(this->getFormula(currentLine.getLineReference1()));
 
-        if (lineNo <= proof.getLineReference1(lineNo) ||
+        if (lineNo <= currentLine.getLineReference1() ||
             infixToPrefix(
-                proof.getFormula(proof.getLineReference1(lineNo)))[0] != '*') {
+                this->getFormula(currentLine.getLineReference1()))[0] != '*') {
           return false;
         }
 
         if (rule[2] == '1') {
-          if (referenceSubformulas[0] == proof.getFormula(lineNo)) {
+          if (referenceSubformulas[0] == currentLine.getFormula()) {
             return true;
           }
           return false;
         }
 
         if (rule[2] == '2') {
-          if (referenceSubformulas[1] == proof.getFormula(lineNo)) {
+          if (referenceSubformulas[1] == currentLine.getFormula()) {
             return true;
           }
           return false;
         }
+      }
+
+      return false;
+    }
+
       }
 
       return false;

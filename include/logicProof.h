@@ -20,7 +20,9 @@ class LogicProof {
   const std::string getRule(int lineNo) const;
   int getLineReference1(int lineNo) const;
   int getLineReference2(int lineNo) const;
+  const ProofLine& getProofLine(int lineNo) const;
 
+  bool validateLine(int lineNo);
   bool isValid();
 };
 
