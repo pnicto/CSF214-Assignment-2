@@ -13,8 +13,8 @@ class ProofLine {
  public:
   ProofLine(const std::string& str);
 
-  const std::string getFormula();
-  const std::string getRule();
-  int getLineReference1();
-  int getLineReference2();
+  const std::string getFormula() const;
+  const std::string getRule() const;
+  int getLineReference1() const;
+  int getLineReference2() const;
 };

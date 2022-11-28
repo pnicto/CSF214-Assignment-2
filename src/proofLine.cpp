@@ -41,7 +41,7 @@ ProofLine::ProofLine(const std::string& str) {
   }
 }
 
-const std::string ProofLine::getFormula() { return formula; }
-const std::string ProofLine::getRule() { return rule; }
-int ProofLine::getLineReference1() { return lineReference1; }
-int ProofLine::getLineReference2() { return lineReference2; }
+const std::string ProofLine::getFormula() const { return formula; }
+const std::string ProofLine::getRule() const { return rule; }
+int ProofLine::getLineReference1() const { return lineReference1; }
+int ProofLine::getLineReference2() const { return lineReference2; }
