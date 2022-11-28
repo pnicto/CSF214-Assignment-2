@@ -15,11 +15,11 @@ class LogicProof {
 
   void setLine(int lineNo, std::string str);
 
-  int getLength();
-  const std::string getFormula(int lineNo);
-  const std::string getRule(int lineNo);
-  int getLineReference1(int lineNo);
-  int getLineReference2(int lineNo);
+  int getLength() const;
+  const std::string getFormula(int lineNo) const;
+  const std::string getRule(int lineNo) const;
+  int getLineReference1(int lineNo) const;
+  int getLineReference2(int lineNo) const;
 
   bool isValid();
 };

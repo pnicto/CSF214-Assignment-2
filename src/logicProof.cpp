@@ -14,30 +14,30 @@ void LogicProof::setLine(int lineNo, std::string str) {
   linesOfProof[lineNo - 1] = new ProofLine(str);
 }
 
-int LogicProof::getLength() { return length; }
+int LogicProof::getLength() const { return length; }
 
-const std::string LogicProof::getFormula(int lineNo) {
+const std::string LogicProof::getFormula(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
   }
   return (*(linesOfProof[lineNo - 1])).getFormula();
 }
 
-const std::string LogicProof::getRule(int lineNo) {
+const std::string LogicProof::getRule(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
   }
   return (*(linesOfProof[lineNo - 1])).getRule();
 }
 
-int LogicProof::getLineReference1(int lineNo) {
+int LogicProof::getLineReference1(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
   }
   return (*(linesOfProof[lineNo - 1])).getLineReference1();
 }
 
-int LogicProof::getLineReference2(int lineNo) {
+int LogicProof::getLineReference2(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
   }
