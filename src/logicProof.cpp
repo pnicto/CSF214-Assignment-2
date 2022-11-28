@@ -168,10 +168,53 @@ bool LogicProof::validateLine(int lineNo) {
       return false;
     }
 
+    case '>': {
+      if (lineNo <= currentLine.getLineReference1() ||
+          lineNo <= currentLine.getLineReference2() || rule[1] != 'e' ||
+          infixToPrefix(this->getFormula(currentLine.getLineReference1()))[0] !=
+              '>') {
+        return false;
+      }
+
+      std::string* referenceSubformulas =
+          getSubformulas(this->getFormula(currentLine.getLineReference1()));
+
+      if (referenceSubformulas[0] ==
+              this->getFormula(currentLine.getLineReference2()) &&
+          referenceSubformulas[1] == currentLine.getFormula()) {
+        return true;
       }
 
       return false;
     }
+
+    case 'M':
+    case 'm': {
+      if (lineNo <= currentLine.getLineReference1() ||
+          lineNo <= currentLine.getLineReference2() ||
+          (rule[1] != 'T' && rule[1] != 't') ||
+          infixToPrefix(this->getFormula(currentLine.getLineReference1()))[0] !=
+              '>') {
+        return false;
+      }
+
+      if (currentLine.getFormula()[1] != '~' ||
+          this->getFormula(currentLine.getLineReference2())[1] != '~') {
+        return false;
+      }
+
+      std::string* referenceSubformulas =
+          getSubformulas(this->getFormula(currentLine.getLineReference1()));
+
+      if (removeNegation(currentLine.getFormula()) == referenceSubformulas[0] &&
+          removeNegation(this->getFormula(currentLine.getLineReference2())) ==
+              referenceSubformulas[1]) {
+        return true;
+      }
+
+      return false;
+    }
+
     default:
       return false;
   }
