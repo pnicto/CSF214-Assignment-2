@@ -25,5 +25,3 @@ class LogicProof {
   bool validateLine(int lineNo);
   bool isValid();
 };
-
-bool validateLine(LogicProof& proof, int lineNo);
