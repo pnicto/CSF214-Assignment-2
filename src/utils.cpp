@@ -103,3 +103,7 @@ std::string* getSubformulas(std::string infixFormula) {
   subformulas[1] = prefixToInfix(prefixFormula, false);
   return subformulas;
 }
+
+std::string removeNegation(std::string formula) {
+  return formula.substr(2, formula.length() - 3);
+}

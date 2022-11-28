@@ -7,3 +7,4 @@
 std::string infixToPrefix(std::string infixFormula);
 std::string prefixToInfix(std::string prefixFormula, bool returnLeft = true);
 std::string* getSubformulas(std::string infixFormula);
+std::string removeNegation(std::string formula);
