@@ -6,6 +6,13 @@ LogicProof::LogicProof(int proofLength) {
   linesOfProof = new ProofLine* [length] {};
 }
 
+LogicProof::~LogicProof() {
+  for (int i{0}; (i < length); i++) {
+    delete linesOfProof[i];
+  }
+  delete[] linesOfProof;
+}
+
 void LogicProof::setLine(int lineNo, std::string str) {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
@@ -99,23 +106,28 @@ bool LogicProof::validateLine(int lineNo) {
       std::string* subformulas = getSubformulas(currentLine.getFormula());
 
       if (lineNo <= currentLine.getLineReference1() ||
-          infixToPrefix(currentLine.getFormula())[0] != '+' || rule[1] != 'i')
+          infixToPrefix(currentLine.getFormula())[0] != '+' || rule[1] != 'i') {
+        delete[] subformulas;
         return false;
+      }
 
       if (rule[2] == '1') {
         if (subformulas[0] ==
             this->getFormula(currentLine.getLineReference1())) {
+          delete[] subformulas;
           return true;
         }
-
+        delete[] subformulas;
         return false;
       }
       if (rule[2] == '2') {
         if (subformulas[1] ==
             this->getFormula(currentLine.getLineReference1())) {
+          delete[] subformulas;
           return true;
         }
       }
+      delete[] subformulas;
       return false;
       break;
     }
@@ -127,6 +139,7 @@ bool LogicProof::validateLine(int lineNo) {
         if (lineNo <= currentLine.getLineReference1() ||
             lineNo <= currentLine.getLineReference2() ||
             infixToPrefix(currentLine.getFormula())[0] != '*') {
+          delete[] subformulas;
           return false;
         }
 
@@ -134,9 +147,11 @@ bool LogicProof::validateLine(int lineNo) {
                 this->getFormula(currentLine.getLineReference1()) &&
             subformulas[1] ==
                 this->getFormula(currentLine.getLineReference2())) {
+          delete[] subformulas;
           return true;
         }
 
+        delete[] subformulas;
         return false;
       }
 
@@ -147,20 +162,25 @@ bool LogicProof::validateLine(int lineNo) {
         if (lineNo <= currentLine.getLineReference1() ||
             infixToPrefix(
                 this->getFormula(currentLine.getLineReference1()))[0] != '*') {
+          delete[] referenceSubformulas;
           return false;
         }
 
         if (rule[2] == '1') {
           if (referenceSubformulas[0] == currentLine.getFormula()) {
+            delete[] referenceSubformulas;
             return true;
           }
+          delete[] referenceSubformulas;
           return false;
         }
 
         if (rule[2] == '2') {
           if (referenceSubformulas[1] == currentLine.getFormula()) {
+            delete[] referenceSubformulas;
             return true;
           }
+          delete[] referenceSubformulas;
           return false;
         }
       }
@@ -182,9 +202,10 @@ bool LogicProof::validateLine(int lineNo) {
       if (referenceSubformulas[0] ==
               this->getFormula(currentLine.getLineReference2()) &&
           referenceSubformulas[1] == currentLine.getFormula()) {
+        delete[] referenceSubformulas;
         return true;
       }
-
+      delete[] referenceSubformulas;
       return false;
     }
 
@@ -209,9 +230,11 @@ bool LogicProof::validateLine(int lineNo) {
       if (removeNegation(currentLine.getFormula()) == referenceSubformulas[0] &&
           removeNegation(this->getFormula(currentLine.getLineReference2())) ==
               referenceSubformulas[1]) {
+        delete[] referenceSubformulas;
         return true;
       }
 
+      delete[] referenceSubformulas;
       return false;
     }
 

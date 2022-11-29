@@ -12,6 +12,7 @@ class LogicProof {
 
  public:
   LogicProof(int proofLength);
+  ~LogicProof();
 
   void setLine(int lineNo, std::string str);
 
