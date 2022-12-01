@@ -1,3 +1,11 @@
+/**
+ * @file utils.h
+ * @brief Header file for utils.cpp
+ * @date 01-12-2022
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #pragma once
 
 #include <algorithm>

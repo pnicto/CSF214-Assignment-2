@@ -1,7 +1,7 @@
-/*!
+/**
  * @file stack.cpp
- * @brief Source file for stack
- * @date 21-10-2022
+ * @brief Source file for stack.h
+ * @date 01-12-2022
  *
  * @copyright Copyright (c) 2022
  *
@@ -10,7 +10,7 @@
 
 /*!
  * @brief Resizes the stack array dynamically
- *@details Assigns Stack::stackElements to Stack::tempStackElements and copies
+ * @details Assigns Stack::stackElements to Stack::tempStackElements and copies
  *the elements in Stack::stackElements to Stack::tempStackElements while
  *allocating new array with twice the size of old array to Stack::stackElements
  */
@@ -26,7 +26,7 @@ void Stack::resizeArray() {
 
 /*!
  * @brief Construct a new Stack object
- *@details A new instance of Stack will be created with Stack::stackElements
+ * @details A new instance of Stack will be created with Stack::stackElements
  *being a std::string[1], Stack::idx being -1 and Stack::maxElements being 1
  */
 Stack::Stack() {
@@ -37,7 +37,7 @@ Stack::Stack() {
 
 /*!
  * @brief Destroy the Stack object
- *@details Destroys the allocated Stack::stackElements
+ * @details Destroys the allocated Stack::stackElements
  */
 Stack::~Stack() { delete[] stackElements; }
 

@@ -1,7 +1,7 @@
-/*!
+/**
  * @file stack.h
- * @brief Header file for stack
- * @date 21-10-2022
+ * @brief Header file for stack.cpp
+ * @date 01-12-2022
  *
  * @copyright Copyright (c) 2022
  *
@@ -12,8 +12,8 @@
 #include <string>
 
 /*!
- * @brief Class for stack to store operators to convert the propositional logic
- * formula from infix to prefix.
+ * @brief Custom stack defined for multiple purposes
+ *
  *
  */
 class Stack {

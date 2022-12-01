@@ -1,0 +1,12 @@
+<map id="LogicProof::validateLine" name="LogicProof::validateLine">
+<area shape="rect" id="node1" title="Given a line number validates the proof line." coords="5,179,167,204"/>
+<area shape="rect" id="node2" href="$classProofLine.html#a6f15eb7449501df4529d0800f84045e5" title="Gets the formula present in the proof line." coords="237,5,387,31"/>
+<area shape="rect" id="node3" href="$classLogicProof.html#a8272ead70dfe367abcfef118c8611b93" title="Given a line number returns the formula." coords="233,55,391,80"/>
+<area shape="rect" id="node4" href="$classProofLine.html#a745a86679416a34eeff4e5480483e834" title="Gets the line reference (1) referenced while applying the rule." coords="215,104,409,129"/>
+<area shape="rect" id="node5" href="$classProofLine.html#a184f117f56837f4d22bd5238b42f0ee9" title="Gets the line reference (2) referenced while applying the rule." coords="215,153,409,179"/>
+<area shape="rect" id="node6" href="$classLogicProof.html#a8e4fb26f259e8262dab8dec178cb7176" title="Given a line number, gets the proof line object reference." coords="229,203,395,228"/>
+<area shape="rect" id="node7" href="$classProofLine.html#affb8df81fdbdedb6a5a52f96ca7865e4" title="Gets the rule present in the proof line." coords="247,252,377,277"/>
+<area shape="rect" id="node8" href="$utils_8cpp.html#a28cdd43f9fe341d3e93053ba2132fdb7" title="Gets an array of subformulae." coords="255,353,369,379"/>
+<area shape="rect" id="node9" href="$utils_8cpp.html#a32422df5e46274fb24a354222b40cea1" title="Takes the infix formula given and converts into prefix formula." coords="457,304,552,329"/>
+<area shape="rect" id="node10" href="$utils_8cpp.html#a671191aa164ea6787d160a38fb29ff82" title="Takes the prefix formula given and converts into infix formula." coords="458,353,551,379"/>
+</map>
