@@ -1,0 +1,5 @@
+<map id="getSubformulas" name="getSubformulas">
+<area shape="rect" id="node1" title="Gets an array of subformulae." coords="5,31,119,56"/>
+<area shape="rect" id="node2" href="$utils_8cpp.html#a32422df5e46274fb24a354222b40cea1" title="Takes the infix formula given and converts into prefix formula." coords="167,5,261,31"/>
+<area shape="rect" id="node3" href="$utils_8cpp.html#a671191aa164ea6787d160a38fb29ff82" title="Takes the prefix formula given and converts into infix formula." coords="167,55,261,80"/>
+</map>
