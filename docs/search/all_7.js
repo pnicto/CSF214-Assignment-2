@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['setline_0',['setLine',['../classLogicProof.html#a2643ea5fa7d50831b713e984049875db',1,'LogicProof']]],
-  ['stack_1',['Stack',['../classStack.html',1,'Stack'],['../classStack.html#a14cd1cba325bead4ff0a91bc6eb0f6f5',1,'Stack::Stack()']]],
-  ['stack_2ecpp_2',['stack.cpp',['../stack_8cpp.html',1,'']]],
-  ['stack_2eh_3',['stack.h',['../stack_8h.html',1,'']]],
-  ['stackelements_4',['stackElements',['../classStack.html#adb132633896408b856ee82c0f80bd60d',1,'Stack']]]
+  ['pop_0',['pop',['../classStack.html#ac9baf68c9771267d330a550e41576c77',1,'Stack']]],
+  ['prefixtoinfix_1',['prefixToInfix',['../utils_8h.html#a526f967cb6aeb800419475a52b41afbf',1,'prefixToInfix(std::string prefixFormula, bool returnLeft=true):&#160;utils.cpp'],['../utils_8cpp.html#a671191aa164ea6787d160a38fb29ff82',1,'prefixToInfix(std::string prefixFormula, bool returnLeft):&#160;utils.cpp']]],
+  ['printstack_2',['printStack',['../classStack.html#a2cc6f8f4d4e2259a680407295d211091',1,'Stack']]],
+  ['proofline_3',['ProofLine',['../classProofLine.html',1,'ProofLine'],['../classProofLine.html#a143e33362b6f5315be380f07311f38c0',1,'ProofLine::ProofLine()']]],
+  ['proofline_2ecpp_4',['proofLine.cpp',['../proofLine_8cpp.html',1,'']]],
+  ['proofline_2eh_5',['proofLine.h',['../proofLine_8h.html',1,'']]],
+  ['push_6',['push',['../classStack.html#ac8f8dfa8040aca289d445d23041784c0',1,'Stack']]]
 ];

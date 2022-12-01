@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['resizearray_0',['resizeArray',['../classStack.html#a35edd57c48bd4f86fae25f18af63568f',1,'Stack']]],
-  ['rule_1',['rule',['../classProofLine.html#abc1606d42cd696a18f08f821a0e2dcdc',1,'ProofLine']]]
+  ['main_2ecpp_0',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['main_2eh_1',['main.h',['../main_8h.html',1,'']]],
+  ['maxelements_2',['maxElements',['../classStack.html#a88942cf750fe85dcb5523455e9b2d4fe',1,'Stack']]]
 ];

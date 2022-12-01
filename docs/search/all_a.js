@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['validateline_0',['validateLine',['../classLogicProof.html#a011db3a55dccb1b9e0ef6ee18aa6811e',1,'LogicProof']]]
+  ['tempstackelements_0',['tempStackElements',['../classStack.html#a976f331a444a3937ddff26b40cbf3554',1,'Stack']]]
 ];

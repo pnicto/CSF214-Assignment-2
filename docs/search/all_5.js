@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['pop_0',['pop',['../classStack.html#ac9baf68c9771267d330a550e41576c77',1,'Stack']]],
-  ['prefixtoinfix_1',['prefixToInfix',['../utils_8h.html#a526f967cb6aeb800419475a52b41afbf',1,'prefixToInfix(std::string prefixFormula, bool returnLeft=true):&#160;utils.cpp'],['../utils_8cpp.html#a671191aa164ea6787d160a38fb29ff82',1,'prefixToInfix(std::string prefixFormula, bool returnLeft):&#160;utils.cpp']]],
-  ['printstack_2',['printStack',['../classStack.html#a2cc6f8f4d4e2259a680407295d211091',1,'Stack']]],
-  ['proofline_3',['ProofLine',['../classProofLine.html',1,'ProofLine'],['../classProofLine.html#a143e33362b6f5315be380f07311f38c0',1,'ProofLine::ProofLine()']]],
-  ['proofline_2ecpp_4',['proofLine.cpp',['../proofLine_8cpp.html',1,'']]],
-  ['proofline_2eh_5',['proofLine.h',['../proofLine_8h.html',1,'']]],
-  ['push_6',['push',['../classStack.html#ac8f8dfa8040aca289d445d23041784c0',1,'Stack']]]
+  ['length_0',['length',['../classLogicProof.html#a08cbdea2f69aeb76217abc1e89441e57',1,'LogicProof']]],
+  ['linereference1_1',['lineReference1',['../classProofLine.html#acaca568ac83051ad23fd141a2e8fbc9d',1,'ProofLine']]],
+  ['linereference2_2',['lineReference2',['../classProofLine.html#aac7878acbdfc06a020dceeee48fad5f7',1,'ProofLine']]],
+  ['linesofproof_3',['linesOfProof',['../classLogicProof.html#a2e9a8c37dfdd755e70c14641ab11a514',1,'LogicProof']]],
+  ['logicproof_4',['LogicProof',['../classLogicProof.html',1,'LogicProof'],['../classLogicProof.html#a7766196af35c15b84e621b030aaeb8b5',1,'LogicProof::LogicProof()']]],
+  ['logicproof_2ecpp_5',['logicProof.cpp',['../logicProof_8cpp.html',1,'']]],
+  ['logicproof_2eh_6',['logicProof.h',['../logicProof_8h.html',1,'']]]
 ];
