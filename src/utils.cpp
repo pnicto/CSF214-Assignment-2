@@ -1,3 +1,12 @@
+/**
+ * @file utils.cpp
+ * @brief Source file for utils.h
+ * @details Contains utility/helper functions
+ * @date 01-12-2022
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include "../include/utils.h"
 
 /*!
@@ -59,6 +68,15 @@ std::string infixToPrefix(std::string infixFormula) {
   return prefixFormula;
 }
 
+/**
+ * @brief Takes the prefix formula given and converts into infix formula
+ * @details Reverse the given prefix formula and iterates through the formula
+ * pushing the operands also takes in which part of the formula to return as a
+ * bool
+ * @param prefixFormula
+ * @param returnLeft
+ * @return std::string prefixFormula
+ */
 std::string prefixToInfix(std::string prefixFormula, bool returnLeft) {
   Stack operandStack{};
   std::reverse(prefixFormula.begin(), prefixFormula.end());
@@ -95,6 +113,12 @@ std::string prefixToInfix(std::string prefixFormula, bool returnLeft) {
   }
 }
 
+/**
+ * @brief Gets an array of subformulae
+ *
+ * @param infixFormula
+ * @return std::string*
+ */
 std::string* getSubformulas(std::string infixFormula) {
   std::string* subformulas = new std::string[2]{};
   std::string prefixFormula = infixToPrefix(infixFormula);

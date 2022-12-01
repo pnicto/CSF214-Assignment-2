@@ -1,11 +1,28 @@
+/**
+ * @file logicProof.cpp
+ * @brief Source file for logicProof.h
+ * @date 01-12-2022
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include "../include/logicProof.h"
 
+/**
+ * @brief Construct a new Logic Proof object with a given proof length
+ *
+ * @param proofLength
+ */
 LogicProof::LogicProof(int proofLength) {
   length = proofLength;
 
   linesOfProof = new ProofLine* [length] {};
 }
 
+/**
+ * @brief Destroy the Logic Proof object
+ *
+ */
 LogicProof::~LogicProof() {
   for (int i{0}; (i < length); i++) {
     delete linesOfProof[i];
@@ -13,6 +30,12 @@ LogicProof::~LogicProof() {
   delete[] linesOfProof;
 }
 
+/**
+ * @brief Set's the given proof line to line number in a logic proof
+ *
+ * @param lineNo
+ * @param str
+ */
 void LogicProof::setLine(int lineNo, std::string str) {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
@@ -24,8 +47,19 @@ void LogicProof::setLine(int lineNo, std::string str) {
   linesOfProof[lineNo - 1] = new ProofLine(str);
 }
 
+/**
+ * @brief Gets the length of the logic proof
+ *
+ * @return int
+ */
 int LogicProof::getLength() const { return length; }
 
+/**
+ * @brief Given a line number returns the formula
+ *
+ * @param lineNo
+ * @return const std::string
+ */
 const std::string LogicProof::getFormula(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
@@ -36,6 +70,12 @@ const std::string LogicProof::getFormula(int lineNo) const {
   return (*(linesOfProof[lineNo - 1])).getFormula();
 }
 
+/**
+ * @brief Given a line number returns the rule that is to be applied
+ *
+ * @param lineNo
+ * @return const std::string
+ */
 const std::string LogicProof::getRule(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
@@ -46,6 +86,13 @@ const std::string LogicProof::getRule(int lineNo) const {
   return (*(linesOfProof[lineNo - 1])).getRule();
 }
 
+/**
+ * @brief Given a line number returns the line reference on which the rule was
+ * applied (1)
+ *
+ * @param lineNo
+ * @return int
+ */
 int LogicProof::getLineReference1(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
@@ -56,6 +103,13 @@ int LogicProof::getLineReference1(int lineNo) const {
   return (*(linesOfProof[lineNo - 1])).getLineReference1();
 }
 
+/**
+ * @brief Given a line number returns the line reference on which the rule was
+ * applied (2)
+ *
+ * @param lineNo
+ * @return int
+ */
 int LogicProof::getLineReference2(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
@@ -66,6 +120,12 @@ int LogicProof::getLineReference2(int lineNo) const {
   return (*(linesOfProof[lineNo - 1])).getLineReference2();
 }
 
+/**
+ * @brief Given a line number, gets the proof line object reference
+ *
+ * @param lineNo
+ * @return const ProofLine&
+ */
 const ProofLine& LogicProof::getProofLine(int lineNo) const {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");
@@ -76,6 +136,12 @@ const ProofLine& LogicProof::getProofLine(int lineNo) const {
   return (*(linesOfProof[lineNo - 1]));
 }
 
+/**
+ * @brief Validates a logic proof
+ *
+ * @return true
+ * @return false
+ */
 bool LogicProof::isValid() {
   bool flag = true;
   for (int i{0}; (i < length) && flag; i++) {
@@ -86,6 +152,13 @@ bool LogicProof::isValid() {
   return flag;
 }
 
+/**
+ * @brief Given a line number validates the proof line
+ *
+ * @param lineNo
+ * @return true
+ * @return false
+ */
 bool LogicProof::validateLine(int lineNo) {
   if (lineNo > length) {
     throw std::invalid_argument("received index greater than proof length");

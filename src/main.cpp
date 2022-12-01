@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @brief Source file for main.h
+ * @details Where all the pieces are connected
+ * @date 01-12-2022
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include "../include/main.h"
 
 int main() {
