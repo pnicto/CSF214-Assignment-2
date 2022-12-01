@@ -1,1 +1,1 @@
-# Algorithm
+# About the algorithm
