@@ -87,13 +87,15 @@ std::string prefixToInfix(std::string prefixFormula, bool returnLeft) {
       case '>': {
         std::string operand1 = operandStack.pop();
         std::string operand2 = operandStack.pop();
-        std::string temp = "(" + operand1 + character + operand2 + ")";
+        std::string temp = std::string("(") + operand1 + character + operand2 +
+                           std::string(")");
         operandStack.push(temp);
         break;
       }
       case '~': {
         std::string operand = operandStack.pop();
-        std::string temp = "(" + character + operand + ")";
+        std::string temp =
+            std::string("(") + character + operand + std::string(")");
         operandStack.push(temp);
         break;
       }
