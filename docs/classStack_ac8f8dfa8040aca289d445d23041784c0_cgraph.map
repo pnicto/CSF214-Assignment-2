@@ -1,4 +1,0 @@
-<map id="Stack::push" name="Stack::push">
-<area shape="rect" id="node1" title="Adds the element to the stack." coords="5,5,97,31"/>
-<area shape="rect" id="node2" href="$classStack.html#a35edd57c48bd4f86fae25f18af63568f" title="Resizes the stack array dynamically." coords="145,5,276,31"/>
-</map>

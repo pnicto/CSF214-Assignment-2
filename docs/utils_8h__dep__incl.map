@@ -1,8 +1,0 @@
-<map id="include/utils.h" name="include/utils.h">
-<area shape="rect" id="node1" title="Header file for utils.cpp." coords="113,5,215,31"/>
-<area shape="rect" id="node2" href="$logicProof_8h.html" title="Header file for logicProof.cpp." coords="96,79,232,104"/>
-<area shape="rect" id="node3" href="$main_8h.html" title="Header file for main.cpp." coords="5,152,112,177"/>
-<area shape="rect" id="node6" href="$utils_8cpp.html" title="Source file for utils.h." coords="256,79,349,104"/>
-<area shape="rect" id="node5" href="$logicProof_8cpp.html" title="Source file for logicProof.h." coords="137,152,263,177"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="Source file for main.h." coords="10,225,107,251"/>
-</map>
