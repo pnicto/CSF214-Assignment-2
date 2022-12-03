@@ -2,12 +2,12 @@
 
 To make checking validity of logical proofs as simple as possible, we have defined two classes which hold and manage the data contained within the proof. These are:
 
-1) The ProofLine class, which holds a particular line of the proof. It has different parameters for holding the formula on that line, the rule that was used to get this formula, and up to two line numbers referenced by that rule, such as the line number containing the formula to which an OR was introduced, for the OR Introduction rule.
-2) The LogicProof class, which has an array of pointers to ProofLine objects that represent each line of the proof, as well as additional helpful properties like the length of the proof.
+1. The ProofLine class, which holds a particular line of the proof. It has different parameters for holding the formula on that line, the rule that was used to get this formula, and up to two line numbers referenced by that rule, such as the line number containing the formula to which an OR was introduced, for the OR Introduction rule.
+2. The LogicProof class, which has an array of pointers to ProofLine objects that represent each line of the proof, as well as additional helpful properties like the length of the proof.
 
 Our algorithm for figuring out the validity of a logic proof is quite straightforward. Given a proof, we iterate through every line in order, checking its validity. If any line is determined to be invalid, the iteration is halted there and "false" is returned; otherwise, if we reach the end of the proof and every line was valid, "true" is returned instead.
 
-Checking the validity of each individual line, too, is quite simple. As instructed, the formula in each line is assumed to be valid and well parenthesized, so the only thing to check is for the correct usage of the rules of natural deduction. For any line, we start by checking the rule used for it, with a master `switch` statement. If the line is a premise, it is assumed to be valid by default; otherwise, for all other (known) rules we ensure the rule was utilized correctly. If the rule is unknown, it is assumed to be invalid.
+Checking the validity of each individual line, too, is quite simple. As instructed, the formula in each line is assumed to be valid and well parenthesized, so the only thing to check is for the correct usage of the rules of natural deduction. For any line, we start by checking the rule used for it, with a master `switch` statement (which we preferred over a chain of `if-else` statements as it is faster for matching one value from a set of values, and makes adding more rules down the line simpler as well). If the line is a premise, it is assumed to be valid by default; otherwise, for all other (known) rules we ensure the rule was utilized correctly. If the rule is unknown, it is assumed to be invalid.
 
 For every rule we do some basic preliminary checks, such as:
 
