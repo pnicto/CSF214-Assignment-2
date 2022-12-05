@@ -24,20 +24,9 @@ int main() {
     proof.setLine(i + 1, temp);
   }
 
-  // for (int i{0}; i < proof.getLength(); i++) {
-  //   std::cout << proof.getFormula(i + 1) << "\n"
-  //             << proof.getRule(i + 1) << "\n"
-  //             << proof.getLineReference1(i + 1) << "\n"
-  //             << proof.getLineReference2(i + 1) << "\n\n";
-  // }
-
   std::cout << ((proof.isValid()) ? "The proof is valid"
                                   : "The proof is invalid")
             << "\n";
-
-  // std::cout << infixToPrefix("((a+b)*(c>d))") << "\n";
-  // std::cout << prefixToInfix("a") << "\n";
-  // std::cout << prefixToInfix("+ab>cd", false) << "\n";
 
   return 0;
 }
